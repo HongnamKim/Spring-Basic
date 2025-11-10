@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: hello-spring
+  thymeleaf:
+    cache: false
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
