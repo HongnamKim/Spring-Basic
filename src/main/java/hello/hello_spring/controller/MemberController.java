@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -27,8 +28,6 @@ public class MemberController {
 
   @PostMapping("/members/new")
   public String create(MemberForm form) {
-    System.out.println(form);
-
     Member member = new Member();
 
     member.setName(form.getName());
@@ -49,7 +48,7 @@ public class MemberController {
 
   @PostMapping("/api/members/new")
   @ResponseBody
-  public Member createMember(MemberForm form) {
+  public Member createMember(@RequestBody MemberForm form) {
     Member member = new Member();
 
     member.setName(form.getName());
